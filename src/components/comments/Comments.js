@@ -14,10 +14,12 @@ const Comments = ({ videoId, totalComments }) => {
     dispatch(getCommentsOfVideoById(videoId));
   }, [videoId, dispatch]);
 
-  // Changed to destructure loading along with comments
+  // Destructure comments and loading from the commentList state
   const { comments, loading } = useSelector((state) => state.commentList);
 
-  const { photoURL } = useSelector((state) => state.auth?.user);
+  // Destructure user from the auth state, add a null check for user
+  const user = useSelector((state) => state.auth?.user);
+  const photoURL = user?.photoURL;
 
   const [text, setText] = useState("");
 
@@ -43,7 +45,9 @@ const Comments = ({ videoId, totalComments }) => {
     <div className="comments">
       <p>{totalComments} Comments</p>
       <div className="my-2 comments__form d-flex w-100">
-        <img src={photoURL} alt="avatar" className="mr-3 rounded-circle" />
+        {photoURL && ( // Add a check to only render the image if photoURL is available
+          <img src={photoURL} alt="avatar" className="mr-3 rounded-circle" />
+        )}
         <form onSubmit={handleComment} className="d-flex flex-grow-1 px-3">
           <input
             type="text"

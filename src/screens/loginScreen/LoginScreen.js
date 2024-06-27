@@ -28,7 +28,7 @@ const LoginScreen = () => {
         <h2>Youtube Clone</h2>
         <img src="http://pngimg.com/uploads/youtube/youtube_PNG2.png" alt="" />
         <button onClick={handleLogin}>Login With google</button>
-        <p>Number One Streaming Platform WorldWide</p>
+        <p>Leading Streaming Platform WorldWide</p>
       </div>
     </div>
   );

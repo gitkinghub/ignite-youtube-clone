@@ -57,9 +57,9 @@ export const addComment = (id, text) => async (dispatch, getState) => {
       type: CREATE_COMMENT_SUCCESS
     });
 
-    setTimeout(() => dispatch(getCommentsOfVideoById(id)), 3000);
+    setTimeout(() => dispatch(getCommentsOfVideoById(id)), 5000);
   } catch (error) {
-    console.log(error.response.data);
+    console.error("Error creating comment:", error.response.data); // Detailed error logging
     dispatch({
       type: CREATE_COMMENT_FAIL,
       payload: error.response.data.message
