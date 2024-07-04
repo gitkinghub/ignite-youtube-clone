@@ -75,5 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Home Screen
 ![image](https://github.com/gitkinghub/ignite-youtube-clone/assets/93211264/df5c4dc6-173c-4a96-aaf7-21b63df9aa00)
 
-## That's It Happy Enjoy
+## That's It Happy Watching
 
